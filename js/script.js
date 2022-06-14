@@ -6,13 +6,16 @@ let j = 0;
 
 switch(gameDifficulty) {
     case 1:
-        prodBombs(1, 100);
+        maxRange = 100;
+        prodBombs(1, maxRange);
         break;
     case 2:
-        prodBombs(1, 81);
+        maxRange = 81;
+        prodBombs(1, maxRange);
         break;
     case 3:
-        prodBombs(1, 49);
+        maxRange = 49;
+        prodBombs(1, maxRange);
         break;
 }
 
@@ -32,12 +35,13 @@ while (game) {
     userNumber = parseInt(prompt('dammi un numero'));
     if (bombs.includes(userNumber)) {
         alert('sei na pippa!')
+        alert(`tentativi giusti ${j}`)
         game = false;
     } else {
         alert("c'hai preso!")
         j++
     }
-    if (j >= bombs.length) {
+    if (j >= maxRange - bombs.lenght) {
         game = false
         alert(`hai vinto con ${j}`)
     }
