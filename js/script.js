@@ -1,9 +1,11 @@
+// mi inizializzo le variabili
 const gameDifficulty = parseInt(prompt('decidi la difficolta della partita (1-2-3)'))
 let game = true;
 let bombs = [];
 let userNumber;
 let j = 0;
 
+// in base alla difficoltà scelta dall'utente creo l'array con i numeri
 switch(gameDifficulty) {
     case 1:
         maxRange = 100;
@@ -19,6 +21,7 @@ switch(gameDifficulty) {
         break;
 }
 
+// funzione che richiamo nello switch per produrre l'array
 function prodBombs(min, max) {
     for(i=1; i<=16; i++) {
         num = getRndInteger(min, max);
@@ -31,6 +34,8 @@ function prodBombs(min, max) {
 }
 console.log('bombs',bombs)
 
+
+// while sul quale si basa il gioco che mi permette di controllare che le regole siano rispettate
 while (game) {
     userNumber = parseInt(prompt('dammi un numero'));
     if (bombs.includes(userNumber)) {
@@ -47,6 +52,7 @@ while (game) {
     }
 }
 
+// funzione che uso per creare in maniera casuale i numeri da mettere nell'array
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
