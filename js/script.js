@@ -19,7 +19,11 @@ switch(gameDifficulty) {
 function prodBombs(min, max) {
     for(i=1; i<=16; i++) {
         num = getRndInteger(min, max)
-        bombs.push(getRndInteger(min, max))
+        if (bombs.includes(num)) {
+            i--;
+        } else {
+            bombs.push(num)
+        }        
     }
 }
 console.log(bombs)
