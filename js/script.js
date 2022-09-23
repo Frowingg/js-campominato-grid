@@ -1,3 +1,5 @@
+// campo minato
+
 // mi inizializzo le variabili
 const gameDifficulty = parseInt(prompt('decidi la difficolta della partita (1-2-3)'))
 let game = true;
